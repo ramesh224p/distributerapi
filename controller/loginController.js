@@ -7,8 +7,8 @@ function controller() {
 
 controller.prototype.create = function (req, res) {
     console.log(req.body);
-	console.log(req.body.emp_email);
-    ddm.create(req.body.emp_email, req.body.password, function (err, data) {
+	console.log(req.body.email);
+    ddm.create(req.body.email, req.body.password, function (err, data) {
         if (err) {
             res.status(201).send({ status: false, data: [] });
         } if (data.length == 0) {
