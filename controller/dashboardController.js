@@ -1,13 +1,13 @@
-var dashboardModel = require('../model/dashboardmodel'),
+var dashboardmodel = require('../model/dashboardmodel'),
     controllerUtil=require('../utils/controllerutils'),
     jwt=require('jsonwebtoken');
 
-function dashboardController() {
-    dm = new dashboardModel();
+function dashboardcontroller() {
+    dm = new dashboardmodel();
     cuu=new controllerUtil();
 }
 
-dashboardController.prototype.getAll = function (req, res, next) {
+dashboardcontroller.prototype.getAll = function (req, res, next) {
     // jwt.verify(req.headers.authorization, 'some' , (err, authData) => {
     //     if(err){
     //         console.log(err)
@@ -17,4 +17,4 @@ dashboardController.prototype.getAll = function (req, res, next) {
     // })
 }
 
-module.exports = dashboardController;
+module.exports = dashboardcontroller;

@@ -4,11 +4,11 @@ var connection = require('../mysql/mysql'),
   md5 = require('md5');
   // um = new usermodel();
 
-function forgotpassModel() {
+function forgotpassmodel() {
   this.mysql = connection;
 }
 
-forgotpassModel.prototype.getAll = function (data, callback) {
+forgotpassmodel.prototype.getAll = function (data, callback) {
   console.log("model", data)
   this.mysql.query('select * from emp where email="' + data + '"', function (err, result) {
 
@@ -42,11 +42,11 @@ forgotpassModel.prototype.getAll = function (data, callback) {
   })
 }
 
-forgotpassModel.prototype.update = function (id, data, callback) {
-  this.mysql.query('update employees set? where id=' + id, data, function (err, result) {
+forgotpassmodel.prototype.update = function (id, data, callback) {
+  this.mysql.query('update emp set? where id=' + id, data, function (err, result) {
     console.log("dne");
     callback(err, result);
   })
 }
 
-module.exports = forgotpassModel;
+module.exports = forgotpassmodel;

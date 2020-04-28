@@ -1,8 +1,8 @@
 var express = require('express'),
     router = express.Router(),
-    loginController = require('../controller/loginController.js'),
-    ldc = new loginController();
+    controller = require('../controller/logincontroller.js'),
+    dc = new controller();
 
-router.post('/', ldc.create.bind(ldc));
+router.post('/', dc.create.bind(dc));
 
 module.exports = router;

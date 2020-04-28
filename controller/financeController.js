@@ -1,14 +1,13 @@
 var financeModel=require('../model/financemodel'),
-    controllerUtil=require('../utils/controllerutils');
+    controllerutil=require('../utils/controllerutils');
     
 
 function financeController() {
     dffm= new financeModel();
-    dccu= new controllerUtil();
+    dccu= new controllerutil();
 }
 
 financeController.prototype.getAll=function(req, res, next){
-    console.log('financecontrol')
     dccu.getAll(dffm, req, res, next);
     // dffm.getAll(function(err, data){
     //     if(err){

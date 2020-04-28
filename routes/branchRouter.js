@@ -1,6 +1,6 @@
 var express= require('express'),
     router= express.Router(),
-    branchController= require('../controller/branchController'),
+    branchController= require('../controller/branchcontroller'),
     dbbc= new branchController();
 
 router.get('/', dbbc.getAll.bind(dbbc));

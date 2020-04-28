@@ -6,7 +6,6 @@ function branchController(){
 }
 
 branchController.prototype.getAll=function(req, res, next){
-    console.log('branchescontrol')
     dbbm.getAll( function(err, data){
         if(err){
             res.status(201).send({status:false,data:[]})

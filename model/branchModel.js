@@ -5,7 +5,7 @@ function branchModel(){
 }
 
 branchModel.prototype.getAll=function(callback){
-    this.mysql.query('SELECT * FROM branches', function (err, result){
+    this.mysql.query('SELECT * FROM branch', function (err, result){
         console.log(err, result);
         callback(err, result);
     
@@ -14,25 +14,25 @@ branchModel.prototype.getAll=function(callback){
 
 branchModel.prototype.getById=function(id, callback){
     console.log(id);
-    this.mysql.query('SELECT * FROM branches WHERE id='+id, function (err, result){
+    this.mysql.query('SELECT * FROM branch WHERE id='+id, function (err, result){
         console.log(err, result);
         callback(err, result);
     })
 }
 
 branchModel.prototype.create=function(data, callback){
-    this.mysql.query('INSERT INTO branches SET?', data, function (err, result){
+    this.mysql.query('INSERT INTO branch SET?', data, function (err, result){
         callback(err, result);
     })
 }
 
 branchModel.prototype.update=function(id, data, callback){
-    this.mysql.query('UPDATE branches SET? WHERE id='+id, data, function (err, result){
+    this.mysql.query('UPDATE branch SET? WHERE id='+id, data, function (err, result){
         callback(err, result);
     })
 }
 branchModel.prototype.remove=function(id, callback){
-    this.mysql.query('DELETE FROM branches where id='+id, function (err, result){
+    this.mysql.query('DELETE FROM branch where id='+id, function (err, result){
         callback(err, result);
     })
 }

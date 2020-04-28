@@ -1,7 +1,7 @@
 var express = require('express'),
     router = express.Router(),
-    forgotPassController = require('../controller/forgotpassController');
-fpc = new forgotPassController();
+    forgotpasscontroller = require('../controller/forgotpasscontroller');
+fpc = new forgotpasscontroller();
 
 
 router.get('/', fpc.getAll.bind(fpc));

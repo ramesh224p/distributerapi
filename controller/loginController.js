@@ -1,13 +1,14 @@
-var loginModel = require('../model/loginmodel.js'),
+var model = require('../model/loginmodel.js'),
     jwt = require('jsonwebtoken');
 
-function loginController() {
-    ddm = new loginModel();
+function controller() {
+    ddm = new model();
 }
 
-loginController.prototype.create = function (req, res) {
+controller.prototype.create = function (req, res) {
     console.log(req.body);
-    ddm.create(req.body.email, req.body.password, function (err, data) {
+	console.log(req.body.emp_email);
+    ddm.create(req.body.emp_email, req.body.password, function (err, data) {
         if (err) {
             res.status(201).send({ status: false, data: [] });
         } if (data.length == 0) {
@@ -22,4 +23,4 @@ loginController.prototype.create = function (req, res) {
     })
 }
 
-module.exports = loginController;
+module.exports = controller;

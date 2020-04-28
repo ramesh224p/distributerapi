@@ -1,23 +1,23 @@
 var express = require('express'),
     router = express.Router();
 
-router.use('/login', require('./loginRouter'));
+router.use('/login', require('./loginrouter'));
 
-router.use('/dashboard', require('./dashboardRouter'));
+router.use('/dashboard', require('./dashboardrouter'));
 
-router.use('/forgotpass', require('./forgotpassRouter'));
+router.use('/forgotpass', require('./forgotpassrouter'));
 
-router.use('/inventory', require('./inventoryRouter'));
+router.use('/defaultpass', require('./defaultpassrouter'));
 
-router.use('/signup', require('./signupRouter'));
+router.use('/signup', require('./signuprouter'));
 
-router.use('/todolist', require('./todolistRouter'));
+router.use('/todolist', require('./todolistrouter'));
 
-router.use('/branches', require('./branchRouter'));
+router.use('/branches', require('./branchrouter'));
 
-router.use('/finances', require('./financeRouter'));
+router.use('/finances', require('./financerouter'));
 
-router.use('/indent', require('./indentRouter'));
+router.use('/employees', require('./employeesRouter'));
 
 router.use('/complaints', require('./complaintsRouter'));
 

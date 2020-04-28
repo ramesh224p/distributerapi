@@ -1,6 +1,6 @@
 var express= require('express'),
     router= express.Router(),
-    financeController= require('../controller/financeController'),
+    financeController= require('../controller/branchcontroller'),
     dffc= new financeController();
 
 router.get('/', dffc.getAll.bind(dffc));

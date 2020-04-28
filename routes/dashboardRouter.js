@@ -1,10 +1,10 @@
 var express = require('express'),
     router = express.Router(),
-    dashboardController = require('../controller/dashboardController'),
+    dashboardcontroller = require('../controller/dashboardcontroller'),
     verifyToken=require('../utils/authtoken'),
     vt = new verifyToken(),
     auth=require('../utils/authentication'),
-    dcr = new dashboardController();
+    dcr = new dashboardcontroller();
 
 router.get('/', dcr.getAll.bind(dcr));
 

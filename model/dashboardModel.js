@@ -1,13 +1,14 @@
 var connection = require('../mysql/mysql.js');
 
-function dashboardModel() {
+function dashboardmodel() {
     this.mysql = connection;
 }
 
-dashboardModel.prototype.getAll = function ( callback) {
-    this.mysql.query('SELECT * FROM employees', function (err, result) {
+dashboardmodel.prototype.getAll = function ( callback) {
+    console.log('emp')
+    this.mysql.query('SELECT * FROM emp', function (err, result) {
         callback(err, result);
     })
 }
 
-module.exports = dashboardModel;
+module.exports = dashboardmodel;

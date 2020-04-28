@@ -1,6 +1,6 @@
 var express= require('express'),
     router= express.Router(),
-    todolistController=require('../controller/todolistController'),
+    todolistController=require('../controller/todolistcontroller'),
     tdlc= new todolistController();
 
 router.get('/', tdlc.getAll.bind(tdlc));

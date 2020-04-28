@@ -1,22 +1,12 @@
-var complaintsModel=require('../model/branchmodel');
+var employeesModel=require('../model/employeesModel');
     
 
-function complaintsController(){
-    dcpm= new complaintsModel();
+function employeesController(){
+    depm= new employeesModel();
 }
 
-complaintsController.prototype.getAll=function(req, res, next){
-    dcpm.getAll( function(err, data){
-        if(err){
-            res.status(201).send({status:false,data:[]})
-        } else {
-            res.status(200).send({status:true,data:data})
-        }
-    })
-}
-
-complaintsController.prototype.getById=function(req, res, next){
-    dcpm.getById(req.params.id, function(err, data){
+employeesController.prototype.getAll=function(req, res, next){
+    depm.getAll( function(err, data){
         if(err){
             res.status(201).send({status:false,data:[]})
         } else {
@@ -25,26 +15,8 @@ complaintsController.prototype.getById=function(req, res, next){
     })
 }
 
-complaintsController.prototype.create=function(req, res, next){
-    dcpm.create(req.body, function(err, data){
-        if(err){
-            res.status(201).send({status:false,data:[]})
-        } else {
-            res.status(200).send({status:true,data:data})
-        }
-    })
-}
-complaintsController.prototype.update=function(req, res, next){
-    dcpm.update(req.params.id, req.body, function(err, data){
-        if(err){
-            res.status(201).send({status:false,data:[]})
-        } else {
-            res.status(200).send({status:true,data:data})
-        }
-    })
-}
-complaintsController.prototype.remove=function(req, res, next){
-    dcpm.remove(req.params.id, function(err, data){
+employeesController.prototype.getById=function(req, res, next){
+    depm.getById(req.params.id, function(err, data){
         if(err){
             res.status(201).send({status:false,data:[]})
         } else {
@@ -53,4 +25,33 @@ complaintsController.prototype.remove=function(req, res, next){
     })
 }
 
-module.exports=complaintsController;
+employeesController.prototype.create=function(req, res, next){
+    depm.create(req.body, function(err, data){
+        if(err){
+            res.status(201).send({status:false,data:[]})
+        } else {
+            res.status(200).send({status:true,data:data})
+        }
+    })
+}
+employeesController.prototype.update=function(req, res, next){
+	console.log('hi')
+    depm.update(req.params.id, req.body, function(err, data){
+        if(err){
+            res.status(201).send({status:false,data:[]})
+        } else {
+            res.status(200).send({status:true,data:data})
+        }
+    })
+}
+employeesController.prototype.remove=function(req, res, next){
+    depm.remove(req.params.id, function(err, data){
+        if(err){
+            res.status(201).send({status:false,data:[]})
+        } else {
+            res.status(200).send({status:true,data:data})
+        }
+    })
+}
+
+module.exports=employeesController;

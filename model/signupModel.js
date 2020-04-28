@@ -5,7 +5,7 @@ function signupModel(){
 }
 
 signupModel.prototype.create=function(body, callback){
-	this.mysql.query('INSERT INTO employees SET?',body, function(err, result) {
+	this.mysql.query('INSERT INTO emp SET?',body, function(err, result) {
 		callback(err, result);
 		console.log(err, result);
 	})
