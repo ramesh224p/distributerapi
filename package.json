@@ -1,7 +1,6 @@
 {
   "name": "coreuiapi",
   "version": "1.0.0",
-  "description": "",
   "main": "tvs.js",
   "dependencies": {
     "base64-img": "^1.0.4",
@@ -35,5 +34,6 @@
   "bugs": {
     "url": "https://github.com/ramesh224p/coreuiapi/issues"
   },
-  "homepage": "https://github.com/ramesh224p/coreuiapi#readme"
+  "homepage": "https://github.com/ramesh224p/coreuiapi#readme",
+  "description": ""
 }

@@ -3,13 +3,13 @@ var mysql=require('mysql');
 const connection=mysql.createConnection({
     'host' : 'localhost',
     'user' : 'root',
-    'password' : '24710smp',
+    'password' : 'Monitor@123',
     'database' : 'distributer'
 })
 
 connection.connect(function(err){
     if(err){
-        console.log('error in database');
+        console.log('error in database', err);
     } else{
         console.log('database is connected');
     }
