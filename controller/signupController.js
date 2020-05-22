@@ -1,18 +1,13 @@
-var signupModel= require('../model/signupmodel');
+var signupModel= require('../model/signupmodel'),
+	_controllerUtills = require('../utils/controllerUtill/controllerUtils');
 
 function signupController(){
-	srm= new signupModel();
+	sm= new signupModel();
+	controllerUtills = new _controllerUtills();
 }
 
 signupController.prototype.create=function(req, res, next){
-	console.log(req.body);
-	srm.create(req.body, function(err, data){
-		if(err){
-			res.status(201).send({status:false,data:[]});
-		} else {
-			res.status(200).send({status:true,data:data});
-		}
-	});
+	controllerUtills.create(sm, req, res, next);
 }	
 
 module.exports=signupController;

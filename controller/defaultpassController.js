@@ -1,13 +1,13 @@
 var defaultpassmodel = require('../model/defaultpassmodel'),
-    controllerUtil=require('../utils/controllerutils');
+    _controllerUtils = require('../utils/controllerUtill/controllerUtils');
 
 function defaultpasscontroller() {
-    dpmm = new defaultpassmodel();
-    cuu = new controllerUtil();
+    dpm = new defaultpassmodel();
+    controllerUtils = new _controllerUtils();
 }
 
 defaultpasscontroller.prototype.update = function (req, res, next) {
-    cuu.update(dpmm, req, res, next);
+    controllerUtils.update(dpm, req, res, next);
 }
 
 module.exports = defaultpasscontroller;

@@ -1,4 +1,4 @@
-var connection = require('../mysql/mysql.js'),
+var connection = require('../utils/mysql/mysql'),
     md5 = require('md5');
 
 function model() {
@@ -6,11 +6,8 @@ function model() {
 }
 
 model.prototype.create = function (name, password, callback) {
-    console.log(name, password);
     this.mysql.query('SELECT * FROM employees WHERE emp_email= "' + name + '" AND password="' + md5(password) + '"', function (err, result) {
-		console.log(err, result);
-        callback(err, result);
-		
+        callback(err, result);	
     })
 }
 

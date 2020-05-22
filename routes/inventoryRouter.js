@@ -1,12 +1,14 @@
 var express= require('express'),
     router= express.Router(),
     inventoryController= require('../controller/inventoryController'),
-    dic= new inventoryController();
+    verifyToken=require('../utils/auth/authtoken'),
+    vt = new verifyToken(),
+    idc= new inventoryController();
 
-router.get('/', dic.getAll.bind(dic));
-router.get('/:id', dic.getById.bind(dic));
-router.post('/', dic.create.bind(dic));
-router.put('/:id', dic.update.bind(dic));
-router.delete('/:id', dic.remove.bind(dic));
+router.get('/',  vt.auth, idc.getAll.bind(idc));
+router.get('/:id', vt.auth, idc.getById.bind(idc));
+router.post('/', vt.auth, idc.create.bind(idc));
+router.put('/:id', vt.auth, idc.update.bind(idc));
+router.delete('/:id', vt.auth, idc.remove.bind(idc));
 
 module.exports=router;

@@ -1,56 +1,29 @@
-var branchModel=require('../model/branchmodel');
+var branchModel=require('../model/branchmodel'),
+    _controllerUtills = require('../utils/controllerUtill/controllerUtils');
     
-
 function branchController(){
-    dbbm= new branchModel();
+    bm= new branchModel();
+    controllerUtils = new _controllerUtills();
 }
 
 branchController.prototype.getAll=function(req, res, next){
-    dbbm.getAll( function(err, data){
-        if(err){
-            res.status(201).send({status:false,data:[]})
-        } else {
-            res.status(200).send({status:true,data:data})
-        }
-    })
+    controllerUtils.getAll(bm, req, res, next);
 }
 
 branchController.prototype.getById=function(req, res, next){
-    dbbm.getById(req.params.id, function(err, data){
-        if(err){
-            res.status(201).send({status:false,data:[]})
-        } else {
-            res.status(200).send({status:true,data:data})
-        }
-    })
+    controllerUtils.getById(bm, req, res, next);
 }
 
 branchController.prototype.create=function(req, res, next){
-    dbbm.create(req.body, function(err, data){
-        if(err){
-            res.status(201).send({status:false,data:[]})
-        } else {
-            res.status(200).send({status:true,data:data})
-        }
-    })
+    controllerUtils.create(bm, req, res, next);
 }
+
 branchController.prototype.update=function(req, res, next){
-    dbbm.update(req.params.id, req.body, function(err, data){
-        if(err){
-            res.status(201).send({status:false,data:[]})
-        } else {
-            res.status(200).send({status:true,data:data})
-        }
-    })
+    controllerUtils.update(bm, req, res, next);
 }
+
 branchController.prototype.remove=function(req, res, next){
-    dbbm.remove(req.params.id, function(err, data){
-        if(err){
-            res.status(201).send({status:false,data:[]})
-        } else {
-            res.status(200).send({status:true,data:data})
-        }
-    })
+    controllerUtils.remove(bm, req, res, next);
 }
 
 module.exports=branchController;

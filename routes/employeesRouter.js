@@ -1,12 +1,14 @@
 var express= require('express'),
     router= express.Router(),
     employeesController= require('../controller/employeesController'),
-    desc= new employeesController();
+    verifyToken=require('../utils/auth/authtoken'),
+    vt = new verifyToken(),
+    ec= new employeesController();
 
-router.get('/', desc.getAll.bind(desc));
-router.get('/:id', desc.getById.bind(desc));
-router.post('/', desc.create.bind(desc));
-router.put('/:id', desc.update.bind(desc));
-router.delete('/:id', desc.remove.bind(desc));
+router.get('/', vt.auth, ec.getAll.bind(ec));
+router.get('/:id', vt.auth, ec.getById.bind(ec));
+router.post('/', vt.auth, ec.create.bind(ec));
+router.put('/:id', vt.auth, ec.update.bind(ec));
+router.delete('/:id', vt.auth, ec.remove.bind(ec));
 
 module.exports=router;

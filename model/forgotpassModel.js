@@ -1,4 +1,4 @@
-var connection = require('../mysql/mysql'),
+var connection = require('../utils/mysql/mysql'),
   nodemailer = require('nodemailer'),
   // usermodel = require('../model/usersmodel'),
   md5 = require('md5');
@@ -9,7 +9,6 @@ function forgotpassmodel() {
 }
 
 forgotpassmodel.prototype.getAll = function (data, callback) {
-  console.log("model", data)
   this.mysql.query('select * from emp where email="' + data + '"', function (err, result) {
 
     var transporter = nodemailer.createTransport({
@@ -29,11 +28,8 @@ forgotpassmodel.prototype.getAll = function (data, callback) {
 
     transporter.sendMail(mailOptions, function (error, info) {
       if (error) {
-        console.log("CAME");
         callback({ message: "something Went Wrong" }, result);
-        console.log("CAME111111111");
       } else {
-        console.log('Email sent: ' + info.response);
         um.update(result[0].id, { "password": "123456" }, function (_err, _res) {
           callback(_err, _res);
         })
@@ -43,8 +39,7 @@ forgotpassmodel.prototype.getAll = function (data, callback) {
 }
 
 forgotpassmodel.prototype.update = function (id, data, callback) {
-  this.mysql.query('update emp set? where id=' + id, data, function (err, result) {
-    console.log("dne");
+  this.mysql.query('UPDATE emp SET? WHERE id=' + id, data, function (err, result) {
     callback(err, result);
   })
 }

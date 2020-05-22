@@ -1,8 +1,8 @@
 var express= require('express'),
 	router= express.Router(),
 	signupController= require('../controller/signupcontroller');
-	src= new signupController();
+	suc= new signupController();
 
-router.post('/', src.create.bind(src));
+router.post('/', suc.create.bind(suc));
 
 module.exports=router;

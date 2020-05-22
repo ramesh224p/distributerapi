@@ -1,12 +1,14 @@
 var express= require('express'),
     router= express.Router(),
-    complaintsController= require('../controller/branchcontroller'),
-    dcpc= new complaintsController();
+    complaintsController= require('../controller/complaintsController'),
+    verifyToken=require('../utils/auth/authtoken'),
+    vt = new verifyToken(),
+    cc= new complaintsController();
 
-router.get('/', dcpc.getAll.bind(dcpc));
-router.get('/:id', dcpc.getById.bind(dcpc));
-router.post('/', dcpc.create.bind(dcpc));
-router.put('/:id', dcpc.update.bind(dcpc));
-router.delete('/:id', dcpc.remove.bind(dcpc));
+router.get('/', vt.auth, cc.getAll.bind(cc));
+router.get('/:id', vt.auth, cc.getById.bind(cc));
+router.post('/', vt.auth, cc.create.bind(cc));
+router.put('/:id', vt.auth, cc.update.bind(cc));
+router.delete('/:id', vt.auth, cc.remove.bind(cc));
 
 module.exports=router;

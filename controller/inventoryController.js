@@ -1,29 +1,29 @@
 var inventoryModel= require('../model/inventoryModel'),
-    controllerUtil= require('../utils/controllerutils');
+    _controllerUtills = require('../utils/controllerUtill/controllerUtils');
 
-function inventoryControler(){
-    dim= inventoryModel();
-    dcu= controllerUtil();
+function inventoryController(){
+    idm= new inventoryModel();
+    controllerUtills = new _controllerUtills();
 }
 
-inventoryControler.prototype.getAll=function(req, res, next){
-    dcu.getAll(dim, req, res, next);
+inventoryController.prototype.getAll=function(req, res, next){
+    controllerUtills.getAll(idm, req, res, next);
 }
 
-inventoryControler.prototype.getById=function(req, res, next){
-    dcu.getById(dim, req, res, next);
+inventoryController.prototype.getById=function(req, res, next){
+    controllerUtills.getById(idm, req, res, next);
 }
 
-inventoryControler.prototype.create=function(req, res, next){
-    dcu.create(dim, req, res, next);
+inventoryController.prototype.create=function(req, res, next){
+    controllerUtills.create(idm, req, res, next);
 }
 
-inventoryControler.prototype.update=function(req, res, next){
-    dcu.update(dim, req, res, next);
+inventoryController.prototype.update=function(req, res, next){
+    controllerUtills.update(idm, req, res, next);
 }
 
-inventoryControler.prototype.remove=function(req, res, next){
-    dcu.remove(dim, req, res, next);
+inventoryController.prototype.remove=function(req, res, next){
+    controllerUtills.remove(idm, req, res, next);
 }
 
-module.exports=inventoryControler;
+module.exports=inventoryController;

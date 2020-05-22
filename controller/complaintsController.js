@@ -1,56 +1,30 @@
-var complaintsModel=require('../model/branchmodel');
+var complaintsModel=require('../model/complaintsModel'),
+    _controllerUtills = require('../utils/controllerUtill/controllerUtils');
     
 
 function complaintsController(){
-    dcpm= new complaintsModel();
+    cm= new complaintsModel();
+    controllerUtils = new _controllerUtills();
 }
 
 complaintsController.prototype.getAll=function(req, res, next){
-    dcpm.getAll( function(err, data){
-        if(err){
-            res.status(201).send({status:false,data:[]})
-        } else {
-            res.status(200).send({status:true,data:data})
-        }
-    })
+    controllerUtils.getAll(cm, req, res, next);
 }
 
 complaintsController.prototype.getById=function(req, res, next){
-    dcpm.getById(req.params.id, function(err, data){
-        if(err){
-            res.status(201).send({status:false,data:[]})
-        } else {
-            res.status(200).send({status:true,data:data})
-        }
-    })
+    controllerUtils.getById(cm, req, res, next);
 }
 
 complaintsController.prototype.create=function(req, res, next){
-    dcpm.create(req.body, function(err, data){
-        if(err){
-            res.status(201).send({status:false,data:[]})
-        } else {
-            res.status(200).send({status:true,data:data})
-        }
-    })
+    controllerUtils.create(cm, req, res, next);
 }
+
 complaintsController.prototype.update=function(req, res, next){
-    dcpm.update(req.params.id, req.body, function(err, data){
-        if(err){
-            res.status(201).send({status:false,data:[]})
-        } else {
-            res.status(200).send({status:true,data:data})
-        }
-    })
+    controllerUtils.update(cm, req, res, next);
 }
+
 complaintsController.prototype.remove=function(req, res, next){
-    dcpm.remove(req.params.id, function(err, data){
-        if(err){
-            res.status(201).send({status:false,data:[]})
-        } else {
-            res.status(200).send({status:true,data:data})
-        }
-    })
+    controllerUtils.remove(cm, req, res, next);
 }
 
 module.exports=complaintsController;

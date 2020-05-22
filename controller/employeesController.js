@@ -1,57 +1,30 @@
-var employeesModel=require('../model/employeesModel');
+var employeesModel=require('../model/employeesModel'),
+    _controllerUtils = require('../utils/controllerUtill/controllerUtils');
     
 
 function employeesController(){
-    depm= new employeesModel();
+    em= new employeesModel();
+    controllerUtils = new _controllerUtils();
 }
 
 employeesController.prototype.getAll=function(req, res, next){
-    depm.getAll( function(err, data){
-        if(err){
-            res.status(201).send({status:false,data:[]})
-        } else {
-            res.status(200).send({status:true,data:data})
-        }
-    })
+    controllerUtils.getAll(em, req, res, next);
 }
 
 employeesController.prototype.getById=function(req, res, next){
-    depm.getById(req.params.id, function(err, data){
-        if(err){
-            res.status(201).send({status:false,data:[]})
-        } else {
-            res.status(200).send({status:true,data:data})
-        }
-    })
+    controllerUtils.getById(em, req, res, next);
 }
 
 employeesController.prototype.create=function(req, res, next){
-    depm.create(req.body, function(err, data){
-        if(err){
-            res.status(201).send({status:false,data:[]})
-        } else {
-            res.status(200).send({status:true,data:data})
-        }
-    })
+    controllerUtils.create(em, req, res, next);
 }
+
 employeesController.prototype.update=function(req, res, next){
-	console.log('hi')
-    depm.update(req.params.id, req.body, function(err, data){
-        if(err){
-            res.status(201).send({status:false,data:[]})
-        } else {
-            res.status(200).send({status:true,data:data})
-        }
-    })
+    controllerUtils.update(em, req, res, next);
 }
+
 employeesController.prototype.remove=function(req, res, next){
-    depm.remove(req.params.id, function(err, data){
-        if(err){
-            res.status(201).send({status:false,data:[]})
-        } else {
-            res.status(200).send({status:true,data:data})
-        }
-    })
+    controllerUtils.remove(em, req, res, next);
 }
 
 module.exports=employeesController;

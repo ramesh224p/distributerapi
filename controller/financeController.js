@@ -1,59 +1,30 @@
 var financeModel=require('../model/financemodel'),
-    controllerutil=require('../utils/controllerutils');
+    _controllerUtills = require('../utils/controllerUtill/controllerUtils');
     
 
 function financeController() {
-    dffm= new financeModel();
-    dccu= new controllerutil();
+    fm= new financeModel();
+    controllerUtills = new _controllerUtills();
 }
 
 financeController.prototype.getAll=function(req, res, next){
-    dccu.getAll(dffm, req, res, next);
-    // dffm.getAll(function(err, data){
-    //     if(err){
-    //         res.status(201).send({status:false,data:[]})
-    //     } else {
-    //         res.status(200).send({status:true,data:data})
-    //     }
-    // })
+    controllerUtills.getAll(fm, req, res, next);
 }
 
 financeController.prototype.getById=function(req, res, next){
-    dffm.getById(function(err, data){
-        if(err){
-            res.status(201).send({status:false,data:[]})
-        } else {
-            res.status(200).send({status:true,data:data})
-        }
-    })
+    controllerUtills.getById(fm, req, res, next);
 }
 
 financeController.prototype.create=function(req, res, next){
-    dffm.create(req.body, function(err, data){
-        if(err){
-            res.status(201).send({status:false,data:[]})
-        } else {
-            res.status(200).send({status:true,data:data})
-        }
-    })
+    controllerUtills.create(fm, req, res, next);
 }
+
 financeController.prototype.update=function(req, res, next){
-    dffm.update(req.params.id, req.body, function(err, data){
-        if(err){
-            res.status(201).send({status:false,data:[]})
-        } else {
-            res.status(200).send({status:true,data:data})
-        }
-    })
+    controllerUtills.update(fm, req, res, next);
 }
+
 financeController.prototype.remove=function(req, res, next){
-    dffm.remove(req.params.id, function(err, data){
-        if(err){
-            res.status(201).send({status:false,data:[]})
-        } else {
-            res.status(200).send({status:true,data:data})
-        }
-    })
+    controllerUtills.remove(fm, req, res, next);
 }
 
 module.exports=financeController;

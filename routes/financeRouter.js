@@ -1,12 +1,14 @@
 var express= require('express'),
     router= express.Router(),
-    financeController= require('../controller/branchcontroller'),
-    dffc= new financeController();
+    financeController= require('../controller/financecontroller'),
+    verifyToken=require('../utils/auth/authtoken'),
+    vt = new verifyToken(),
+    fc= new financeController();
 
-router.get('/', dffc.getAll.bind(dffc));
-router.get('/:id', dffc.getById.bind(dffc));
-router.post('/', dffc.create.bind(dffc));
-router.put('/:id', dffc.update.bind(dffc));
-router.delete('/:id', dffc.remove.bind(dffc));
+router.get('/', vt.auth, fc.getAll.bind(fc));
+router.get('/:id', vt.auth, fc.getById.bind(fc));
+router.post('/', vt.auth, fc.create.bind(fc));
+router.put('/:id', vt.auth, fc.update.bind(fc));
+router.delete('/:id', vt.auth, fc.remove.bind(fc));
 
 module.exports=router;

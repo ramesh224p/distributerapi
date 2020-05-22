@@ -1,37 +1,49 @@
-var connection = require('../mysql/mysql');
+var connection = require('../utils/mysql/mysql');
 
 function inventoryModel(){
-    this.mysql = connection;
+    this.mysql= connection;
 }
 
-inventoryModel.prototype.getAll=function(callback){
-    this.mysql.query('select * from inventory', function(err, data){
-        callback(err, data);
-    });
+inventoryModel.prototype.getAll=function(params, callback){
+    var sql = '';
+    if(params && Object.keys(params).length > 0){
+        if(Object.keys(params).length){
+            sql = sql + ' WHERE ';
+        }
+        if(params.status){
+            sql = sql + '  status =' + params.status;
+        }
+        if(params.branch){
+            sql = sql + '  branch =' + params.branch;
+        }
+    }    
+    this.mysql.query('SELECT * FROM inventory '+sql , function (err, result){
+        callback(err, result);
+    }) 
 }
 
 inventoryModel.prototype.getById=function(id, callback){
-    this.mysql.query('select * from inventory where id='+id, function(err, data){
-        callback(err, data);
-    });
+    this.mysql.query('SELECT * FROM inventory WHERE id='+id, function(err, result){
+        callback(err, result)
+    })
 }
 
 inventoryModel.prototype.create=function(data, callback){
-    this.mysql.query('insert into inventory set?',data,function(err, data){
-        callback(err, data);
-    });
+    this.mysql.query('INSERT INTO inventory SET?',data, function(err, result){
+        callback(err, result)
+    })
 }
 
 inventoryModel.prototype.update=function(id, data, callback){
-    this.mysql.query('update inventory set? where id='+id, data, function(err, data){
-        callback(err, data);
-    });
+    this.mysql.query('UPDATE inventory SET? WHERE id='+id, data, function(err, result){
+        callback(err, result)
+    })
 }
 
 inventoryModel.prototype.remove=function(id, callback){
-    this.mysql.query('delete from inventory where id='+id, function(err, data){
-        callback(err, data);
-    });
+    this.mysql.query('DELETE FROM inventory WHERE id='+id, function(err, result){
+        callback(err, result)
+    })
 }
 
 module.exports=inventoryModel;

@@ -1,7 +1,7 @@
 {
   "name": "coreuiapi",
   "version": "1.0.0",
-  "main": "tvs.js",
+  "main": "distributer.js",
   "dependencies": {
     "base64-img": "^1.0.4",
     "base64-to-image": "^1.0.2",

@@ -1,57 +1,29 @@
-var todolistModel= require('../model/todolistmodel');
+var todolistModel= require('../model/todolistmodel'),
+    _controllerUtills = require('../utils/controllerUtill/controllerUtils');
 
 function todolistController(){
     tdlm=new todolistModel();
+    controllerUtills = new _controllerUtills();
 }
 
 todolistController.prototype.getAll=function(req, res, next){
-    tdlm.getAll(req, function(err, data){
-        if(err){
-            res.status(201).send({status:false,data:[]});
-        } else{
-            res.status(200).send({status:true,data:data});
-        }
-    })
+    controllerUtills.getAll(tdlm, req, res, next);
 }
 
 todolistController.prototype.getById=function(req, res, next){
-    tdlm.getById(req.params.id, function(err, data){
-        if(err){
-            res.status(201).send({status:false,data:[]});
-        } else{
-            res.status(200).send({status:true,data:data});
-        }
-    })
+    controllerUtills.getById(tdlm, req, res, next);
 }
 
 todolistController.prototype.create=function(req, res, next){
-    tdlm.create(req.body, function(err, data){
-        if(err){
-            res.status(201).send({status:false,data:[]});
-        } else{
-            res.status(200).send({status:true,data:data});
-        }
-    })
+    controllerUtills.create(tdlm, req, res, next);
 }
 
 todolistController.prototype.update=function(req, res, next){
-    tdlm.update(req.params.id, req.body, function(err, data){
-        if(err){
-            res.status(201).send({status:false,data:[]});
-        } else{
-            res.status(200).send({status:true,data:data});
-        }
-    })
+    controllerUtills.update(tdlm, req, res, next);
 }
 
 todolistController.prototype.remove=function(req, res, next){
-    tdlm.remove(req.params.id, function(err, data){
-        if(err){
-            res.status(201).send({status:false,data:[]});
-        } else{
-            res.status(200).send({status:true,data:data});
-        }
-    })
+    controllerUtills.remove(tdlm, req, res, next);
 }
 
 module.exports=todolistController;

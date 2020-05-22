@@ -1,4 +1,4 @@
-var connection=require('../mysql/mysql');
+var connection = require('../utils/mysql/mysql');
 	
 function signupModel(){
 	this.mysql=connection;
@@ -7,7 +7,6 @@ function signupModel(){
 signupModel.prototype.create=function(body, callback){
 	this.mysql.query('INSERT INTO emp SET?',body, function(err, result) {
 		callback(err, result);
-		console.log(err, result);
 	})
 };
 

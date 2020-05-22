@@ -1,24 +1,26 @@
 var express = require('express'),
     router = express.Router();
 
-router.use('/login', require('./loginrouter'));
+router.use('/login', require('./loginRouter'));
 
-router.use('/dashboard', require('./dashboardrouter'));
+router.use('/indents', require('./indentRouter'));
 
-router.use('/forgotpass', require('./forgotpassrouter'));
+router.use('/forgotpass', require('./forgotpassRouter'));
 
-router.use('/defaultpass', require('./defaultpassrouter'));
+router.use('/todolist', require('./todolistRouter'));
 
-router.use('/signup', require('./signuprouter'));
+router.use('/branches', require('./branchRouter'));
 
-router.use('/todolist', require('./todolistrouter'));
-
-router.use('/branches', require('./branchrouter'));
-
-router.use('/finances', require('./financerouter'));
+router.use('/finances', require('./financeRouter'));
 
 router.use('/employees', require('./employeesRouter'));
 
 router.use('/complaints', require('./complaintsRouter'));
 
-module.exports = router;
+router.use('/inventory', require('./inventoryRouter'));
+
+router.use('/inventory-assign', require('./inventoryAssignRouter'));
+
+router.use('/list-indents', require('./listindentsRouter'));
+
+module.exports=router;

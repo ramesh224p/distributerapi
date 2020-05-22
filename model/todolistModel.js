@@ -1,10 +1,10 @@
-var connection= require('../mysql/mysql');
+var connection = require('../utils/mysql/mysql');
 
 function todolistModel(){
     this.mysql=connection;
 }
 
-todolistModel.prototype.getAll=function(req, callback){
+todolistModel.prototype.getAll=function(params, callback){
     this.mysql.query('SELECT * FROM todolist', function(err, result){
         callback(err, result);
     })

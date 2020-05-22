@@ -1,10 +1,10 @@
-var connection = require('../mysql/mysql');
+var connection = require('../utils/mysql/mysql');
 
 function financeModel(){
     this.mysql= connection;
 }
 
-financeModel.prototype.getAll=function(callback){
+financeModel.prototype.getAll=function(params, callback){
     this.mysql.query('SELECT * FROM finance', function (err, result){
         callback(err, result);
     })
@@ -18,7 +18,7 @@ financeModel.prototype.getById=function(id, callback){
 
 financeModel.prototype.create=function(data, callback){
     this.mysql.query('INSERT INTO finance SET?', data, function (err, result){
-        callback(err, result);
+        callback(err, {data, result});
     })
 }
 

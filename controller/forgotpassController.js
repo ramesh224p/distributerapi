@@ -1,17 +1,17 @@
 var forgotpassmodel = require('../model/forgotpassmodel'),
-    controllerUtil=require('../utils/controllerutils');
+    _controllerUtills = require('../utils/controllerUtill/controllerUtils');
 
 function forgotpasscontroller() {
     fpm = new forgotpassmodel();
-    cuu = new controllerUtil();
+    controllerUtills = new _controllerUtills();
 }
 
 forgotpasscontroller.prototype.getAll = function (req, res, next) {
-    cuu.getAll(fpm, req, res, next);
+    controllerUtills.getAll(fpm, req, res, next);
 }
 
 forgotpasscontroller.prototype.update = function (req, res, next) {
-    cuu.update(fpm, req, res, next);
+    controllerUtills.update(fpm, req, res, next);
 }
 
 module.exports = forgotpasscontroller;
