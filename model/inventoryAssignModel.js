@@ -20,6 +20,7 @@ inventoryAssignModel.prototype.getById=function(id, callback){
 
 inventoryAssignModel.prototype.create=function(data, callback){
     this.mysql.query('INSERT INTO inventory_assign SET ? ',data, function(err, result){
+        console.log(err, data);
         if(result){
             im.update(data.inventory_id, {status : 2}, function(err,data){
             });

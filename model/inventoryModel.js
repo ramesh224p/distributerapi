@@ -30,13 +30,13 @@ inventoryModel.prototype.getById=function(id, callback){
 
 inventoryModel.prototype.create=function(data, callback){
     this.mysql.query('INSERT INTO inventory SET?',data, function(err, result){
-        callback(err, result)
+        callback(err, {data, result})
     })
 }
 
 inventoryModel.prototype.update=function(id, data, callback){
     this.mysql.query('UPDATE inventory SET? WHERE id='+id, data, function(err, result){
-        callback(err, result)
+        callback(err, {data, result})
     })
 }
 

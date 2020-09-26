@@ -34,6 +34,7 @@ controllerUtills.prototype.create=function(commanModel, req, res, callback){
 
 controllerUtills.prototype.update=function(commanModel, req, res, callback){
     commanModel.update(req.params.id, req.body, function(err, data){
+        console.log(err, data);
         if(err){
             res.status(201).send({status:false,data:[]});
         }else{

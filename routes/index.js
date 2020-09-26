@@ -19,7 +19,7 @@ router.use('/complaints', require('./complaintsRouter'));
 
 router.use('/inventory', require('./inventoryRouter'));
 
-router.use('/inventory-assign', require('./inventoryAssignRouter'));
+router.use('/inventory_assign', require('./inventoryAssignRouter'));
 
 router.use('/list-indents', require('./listindentsRouter'));
 
