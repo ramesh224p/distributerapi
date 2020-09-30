@@ -1,12 +1,23 @@
+var url = require('url'),
+    redis = require('redis'),
+    config = require('../../config/config.json'),
+    client = redis.createClient(config.Redis_PORT);
+
 function controllerUtills(val) {
     
 }
 
 controllerUtills.prototype.getAll=function(commanModel, req, res, callback){
-    commanModel.getAll(req.query, function(err, data){
+    var r = req.originalUrl;
+    var usern = r.split('/');
+    var username = usern[2];
+    console.log("hhh", req.query);
+        console.log("hii", usern[2]);
+    commanModel.getAll( req.params, function(err, data){
         if(err){
             res.status(201).send({status:false,data:[]});
         }else{
+            client.set(username, JSON.stringify(data));
             res.status(200).send({status:true,data:data});
         }
     })

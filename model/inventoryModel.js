@@ -16,7 +16,7 @@ inventoryModel.prototype.getAll=function(params, callback){
         if(params.branch){
             sql = sql + '  branch =' + params.branch;
         }
-    }    
+    }  
     this.mysql.query('SELECT * FROM inventory '+sql , function (err, result){
         callback(err, result);
     }) 
@@ -24,25 +24,29 @@ inventoryModel.prototype.getAll=function(params, callback){
 
 inventoryModel.prototype.getById=function(id, callback){
     this.mysql.query('SELECT * FROM inventory WHERE id='+id, function(err, result){
-        callback(err, result)
+        callback(err, result);
     })
 }
 
 inventoryModel.prototype.create=function(data, callback){
     this.mysql.query('INSERT INTO inventory SET?',data, function(err, result){
-        callback(err, {data, result})
+        callback(err, {data, result});
     })
 }
 
 inventoryModel.prototype.update=function(id, data, callback){
     this.mysql.query('UPDATE inventory SET? WHERE id='+id, data, function(err, result){
-        callback(err, {data, result})
+        if ( !err ) 
+            client.del('username');
+        callback(err, {data, result});
     })
 }
 
 inventoryModel.prototype.remove=function(id, callback){
     this.mysql.query('DELETE FROM inventory WHERE id='+id, function(err, result){
-        callback(err, result)
+        if ( !err ) 
+            client.del('username');
+        callback(err, result);
     })
 }
 

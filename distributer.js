@@ -1,9 +1,11 @@
 var express = require('express'),
   app = express(),
   bodyParser = require('body-parser'),
+  redis = require('redis'),
   cors = require('cors'),
   config = require('./config/config.json'),
-  methodOverride = require('method-override');
+  methodOverride = require('method-override'),
+  client = redis.createClient(config.Redis_PORT);
 
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -12,10 +14,16 @@ app.use(function (req, res, next) {
   next();
 });
 
+client.on('connect', function () {
+  console.log("connected");
+});
+
 app.use(methodOverride('X-HTTP-Method'));
 app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(methodOverride('X-Method-Override'));
 app.use(methodOverride('_method'));
+
+
 
 app.listen(config.PORT);
 app.use(cors());
