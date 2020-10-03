@@ -11,8 +11,6 @@ controllerUtills.prototype.getAll=function(commanModel, req, res, callback){
     var r = req.originalUrl;
     var usern = r.split('/');
     var username = usern[2];
-    console.log("hhh", req.query);
-        console.log("hii", usern[2]);
     commanModel.getAll( req.params, function(err, data){
         if(err){
             res.status(201).send({status:false,data:[]});
@@ -45,10 +43,11 @@ controllerUtills.prototype.create=function(commanModel, req, res, callback){
 
 controllerUtills.prototype.update=function(commanModel, req, res, callback){
     commanModel.update(req.params.id, req.body, function(err, data){
-        console.log(err, data);
         if(err){
             res.status(201).send({status:false,data:[]});
         }else{
+            if ( !err ) 
+                client.del('username');
             res.status(200).send({status:true,data:data});
         }
     })
@@ -59,6 +58,8 @@ controllerUtills.prototype.remove=function(commanModel, req, res, callback){
         if(err){
             res.status(201).send({status:false,data:[]});
         }else{
+            if ( !err ) 
+                client.del('username');
             res.status(200).send({status:true,data:data});
         }
     })

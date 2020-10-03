@@ -14,7 +14,7 @@
     "md5": "^2.2.1",
     "method-override": "^3.0.0",
     "moment": "^2.24.0",
-    "moments": "^0.0.2",
+    "moments": "0.0.2",
     "multer": "^1.4.2",
     "mysql": "^2.18.1",
     "nodemailer": "^6.4.2",

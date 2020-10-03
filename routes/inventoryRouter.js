@@ -5,6 +5,7 @@ var express= require('express'),
     inventoryController= require('../controller/inventoryController'),
     verifyToken=require('../utils/auth/authtoken'),
     vt = new verifyToken(),
+
     ch = new cache(),
     idc= new inventoryController();
 

@@ -36,16 +36,12 @@ inventoryModel.prototype.create=function(data, callback){
 
 inventoryModel.prototype.update=function(id, data, callback){
     this.mysql.query('UPDATE inventory SET? WHERE id='+id, data, function(err, result){
-        if ( !err ) 
-            client.del('username');
         callback(err, {data, result});
     })
 }
 
 inventoryModel.prototype.remove=function(id, callback){
     this.mysql.query('DELETE FROM inventory WHERE id='+id, function(err, result){
-        if ( !err ) 
-            client.del('username');
         callback(err, result);
     })
 }

@@ -7,8 +7,6 @@ router.use('/indents', require('./indentRouter'));
 
 router.use('/forgotpass', require('./forgotpassRouter'));
 
-router.use('/todolist', require('./todolistRouter'));
-
 router.use('/branches', require('./branchRouter'));
 
 router.use('/finances', require('./financeRouter'));
@@ -22,5 +20,7 @@ router.use('/inventory', require('./inventoryRouter'));
 router.use('/inventory_assign', require('./inventoryAssignRouter'));
 
 router.use('/list-indents', require('./listindentsRouter'));
+
+router.use('/attendance', require('./attendanceRouter'));
 
 module.exports=router;
