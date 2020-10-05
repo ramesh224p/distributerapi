@@ -3,6 +3,7 @@ var express = require('express'),
     attendanceController = require('../controller/attendanceController'),
     ac = new attendanceController;
 
+    
 router.post('/', ac.create.bind(ac));
 
 router.put('/:id', ac.update.bind(ac));

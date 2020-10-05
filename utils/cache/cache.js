@@ -2,14 +2,8 @@ var redis = require('redis'),
     config = require('../../config/config.json'),
     client = redis.createClient(config.Redis_PORT);
 
-function cache () {
-
-}
-
-cache.prototype.redis = function(req, res, next) {
-    var r = req.originalUrl;
-    var usern = r.split('/');
-    var username = usern[2];
+module.exports.redis = function(req, res, next) {
+    var username = req.originalUrl.split('/')[2];
     client.get(username , (error, data) => {
       if (error) throw error;
       if (data != null) {
@@ -19,5 +13,3 @@ cache.prototype.redis = function(req, res, next) {
       }
     });
 }
-
-module.exports = cache;

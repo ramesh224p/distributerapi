@@ -22,13 +22,13 @@ indentModel.prototype.create=function(data, callback){
     })
 }
 
-indentModel.prototype.update=function(callback){
-    this.mysql.query('UPDATE indent SET? WHERE', function(err, result){
+indentModel.prototype.update=function(id, data, callback){
+    this.mysql.query('UPDATE indent SET? WHERE id='+id, data, function(err, result){
         callback(err, {data, result})
     })
 }
 
-indentModel.prototype.remove=function(callback){
+indentModel.prototype.remove=function(id, callback){
     this.mysql.query('DELETE FROM indent WHERE id='+id, function(err, result){
         callback(err, result)
     })

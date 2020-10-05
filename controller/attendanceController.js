@@ -9,10 +9,11 @@ function attendanceController () {
 
 attendanceController.prototype.create = function (req, res, next) {
     if(req.body.email && req.body.password){
+        console.log("ac1");
         am.create(req.body.email, req.body.password, function (err, data) {
             if (err) {
                 res.status(201).send({ status: false, data: [] });
-            } if (data.length == 0) {
+            } else if (data.length == 0) {
                 res.status(401).send({ status: false, data: [], message: "your not registereed" });
             } else {
                 res.status(200).send({ status: true, data : data});
@@ -20,9 +21,11 @@ attendanceController.prototype.create = function (req, res, next) {
         })
     } else {
         am.create1(req.body, function (err, data) {
+            console.log("ac2");
             if (err) {
                 res.status(201).send({ status: false, data: [] });
-            } if (data.length == 0) {
+            } 
+            if (data.length == 0) {
                 res.status(401).send({ status: false, data: [], message: "your not registereed" });
             } else {
                 res.status(200).send({ status: true, data : data});
@@ -32,11 +35,10 @@ attendanceController.prototype.create = function (req, res, next) {
 }
 
 attendanceController.prototype.update = function (req, res, next) {
+    console.log(req);
     am.update(req.id, req.body, function (err, data) {
         if (err) {
             res.status(201).send({ status: false, data: [] });
-        } if (data.length == 0) {
-            res.status(401).send({ status: false, data: [], message: "your not registereed" });
         } else {
             res.status(200).send({ status: true, data : data});
         }

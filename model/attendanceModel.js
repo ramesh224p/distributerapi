@@ -18,8 +18,9 @@ attendanceModel.prototype.create1 = function (data, callback){
     })
 }
 
-attendanceModel.prototype.update = function (id, time, callback){
-    this.mysql.query('UPDATE attendance SET? where id='+id, moment(time).format('YYYY-MM-DD, h:mm:ss'), function (err, result){
+attendanceModel.prototype.update = function (id, item, callback){
+    console.log(item);
+    this.mysql.query("UPDATE attendance SET? where id="+id, item, function (err, result){
         callback(err, result);
     })
 }

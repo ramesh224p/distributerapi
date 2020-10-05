@@ -1,4 +1,7 @@
-var connection = require('../utils/mysql/mysql');
+var connection = require('../utils/mysql/mysql'),
+    redis = require('redis'),
+    config = require('../config/config.json'),
+    client = redis.createClient(config.Redis_PORT);
 
 function inventoryModel(){
     this.mysql= connection;
