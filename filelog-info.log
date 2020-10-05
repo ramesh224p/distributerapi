@@ -1,0 +1,24 @@
+{"message":"server connected on :3004","level":"info","timestamp":"2020-10-05 18:32:45"}
+{"message":"server connected on :3004","level":"info","timestamp":"2020-10-05 18:32:45"}
+{"method":"GET","url":"/v1/complaints","error":null,"level":"info","message":"incoming request verbose","timestamp":"2020-10-05 18:32:52"}
+{"method":"GET","url":"/v1/complaints","error":null,"level":"info","message":"incoming request verbose","timestamp":"2020-10-05 18:32:52"}
+{"method":"GET","url":"/v1/complaints","level":"info","message":"Incoming request","timestamp":"2020-10-05 18:32:52"}
+{"method":"GET","url":"/v1/complaints","level":"info","message":"Incoming request","timestamp":"2020-10-05 18:32:52"}
+{"err":null,"level":"info","message":"incoming request verbose","timestamp":"2020-10-05 18:32:52"}
+{"err":null,"level":"info","message":"incoming request verbose","timestamp":"2020-10-05 18:32:52"}
+{"method":"GET","url":"/v1/branches","error":null,"level":"info","message":"incoming request verbose","timestamp":"2020-10-05 18:33:14"}
+{"method":"GET","url":"/v1/branches","error":null,"level":"info","message":"incoming request verbose","timestamp":"2020-10-05 18:33:14"}
+{"method":"GET","url":"/v1/branches","level":"info","message":"Incoming request","timestamp":"2020-10-05 18:33:14"}
+{"method":"GET","url":"/v1/branches","level":"info","message":"Incoming request","timestamp":"2020-10-05 18:33:14"}
+{"err":{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=' at line 1","sqlState":"42000","index":0,"sql":"SELECT * FROM branch ="},"level":"info","message":"incoming request verbose","timestamp":"2020-10-05 18:33:14"}
+{"err":{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=' at line 1","sqlState":"42000","index":0,"sql":"SELECT * FROM branch ="},"level":"info","message":"incoming request verbose","timestamp":"2020-10-05 18:33:14"}
+{"message":"server connected on :3004","level":"info","timestamp":"2020-10-05 18:38:05"}
+{"message":"server connected on :3004","level":"info","timestamp":"2020-10-05 18:38:05"}
+{"method":"GET","url":"/v1/finances","error":null,"level":"info","message":"incoming request verbose","timestamp":"2020-10-05 18:38:08"}
+{"method":"GET","url":"/v1/finances","error":null,"level":"info","message":"incoming request verbose","timestamp":"2020-10-05 18:38:08"}
+{"method":"GET","url":"/v1/branches","error":null,"level":"info","message":"incoming request verbose","timestamp":"2020-10-05 18:38:10"}
+{"method":"GET","url":"/v1/branches","error":null,"level":"info","message":"incoming request verbose","timestamp":"2020-10-05 18:38:10"}
+{"method":"GET","url":"/v1/branches","level":"info","message":"Incoming request","timestamp":"2020-10-05 18:38:10"}
+{"method":"GET","url":"/v1/branches","level":"info","message":"Incoming request","timestamp":"2020-10-05 18:38:10"}
+{"err":null,"level":"info","message":"incoming request verbose","timestamp":"2020-10-05 18:38:10"}
+{"err":null,"level":"info","message":"incoming request verbose","timestamp":"2020-10-05 18:38:10"}

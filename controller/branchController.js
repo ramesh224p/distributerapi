@@ -1,4 +1,5 @@
 var branchModel=require('../model/branchmodel'),
+logger = require('../utils/logfile/logger').logger,
     _controllerUtills = require('../utils/controllerUtill/controllerUtils');
     
 function branchController(){

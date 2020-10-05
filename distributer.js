@@ -3,6 +3,7 @@ var express = require('express'),
   bodyParser = require('body-parser'),
   redis = require('redis'),
   cors = require('cors'),
+  logger = require('./utils/logfile/logger').logger, 
   config = require('./config/config.json'),
   methodOverride = require('method-override'),
   client = redis.createClient(config.Redis_PORT);
@@ -25,7 +26,10 @@ app.use(methodOverride('_method'));
 
 
 
-app.listen(config.PORT);
+app.listen(config.PORT , function (err) {
+  if ( !err )
+    logger.info('server connected on :'+ config.PORT);
+});
 app.use(cors());
 
 app.use(bodyParser.json());

@@ -1,4 +1,4 @@
-module.exports.issuper=function(req, res, next){
+module.exports.member=function(req, res, next){
     if(req.role == 1)
     console.log("he is super-admin");
     else if (req.role == 2)

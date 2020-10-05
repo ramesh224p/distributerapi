@@ -1,5 +1,6 @@
 var redis = require('redis'),
     config = require('../../config/config.json'),
+    logger = require('../logfile/logger').logger,
     client = redis.createClient(config.Redis_PORT);
 
 function controllerUtills(val) {
@@ -8,10 +9,14 @@ function controllerUtills(val) {
 
 controllerUtills.prototype.getAll=function(commanModel, req, res, callback){
     var username = req.originalUrl.split('/')[2];
+    logger.info("Incoming request", { method : req.method, url : req.baseUrl});
     commanModel.getAll( req.params, function(err, data){
+        logger.info("incoming request verbose", {
+              err : err
+            });
         if(err){
             res.status(201).send({status:false,data:[]});
-        }else{
+        }else {
             client.set(username, JSON.stringify(data));
             res.status(200).send({status:true,data:data});
         }
