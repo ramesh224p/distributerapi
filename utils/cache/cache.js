@@ -6,7 +6,7 @@ var redis = require('redis'),
 module.exports.redis = function(req, res, next) {
     var username = req.originalUrl.split('/')[2];
     client.get(username , (error, data) => {
-      logger.info("incoming request verbose", {
+      logger.info("incoming request REDIS", {
         method : req.method,
         url : req.baseUrl,
         error : error

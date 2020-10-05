@@ -1,24 +1,36 @@
-{"message":"server connected on :3004","level":"info","timestamp":"2020-10-05 18:32:45"}
-{"message":"server connected on :3004","level":"info","timestamp":"2020-10-05 18:32:45"}
-{"method":"GET","url":"/v1/complaints","error":null,"level":"info","message":"incoming request verbose","timestamp":"2020-10-05 18:32:52"}
-{"method":"GET","url":"/v1/complaints","error":null,"level":"info","message":"incoming request verbose","timestamp":"2020-10-05 18:32:52"}
-{"method":"GET","url":"/v1/complaints","level":"info","message":"Incoming request","timestamp":"2020-10-05 18:32:52"}
-{"method":"GET","url":"/v1/complaints","level":"info","message":"Incoming request","timestamp":"2020-10-05 18:32:52"}
-{"err":null,"level":"info","message":"incoming request verbose","timestamp":"2020-10-05 18:32:52"}
-{"err":null,"level":"info","message":"incoming request verbose","timestamp":"2020-10-05 18:32:52"}
-{"method":"GET","url":"/v1/branches","error":null,"level":"info","message":"incoming request verbose","timestamp":"2020-10-05 18:33:14"}
-{"method":"GET","url":"/v1/branches","error":null,"level":"info","message":"incoming request verbose","timestamp":"2020-10-05 18:33:14"}
-{"method":"GET","url":"/v1/branches","level":"info","message":"Incoming request","timestamp":"2020-10-05 18:33:14"}
-{"method":"GET","url":"/v1/branches","level":"info","message":"Incoming request","timestamp":"2020-10-05 18:33:14"}
-{"err":{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=' at line 1","sqlState":"42000","index":0,"sql":"SELECT * FROM branch ="},"level":"info","message":"incoming request verbose","timestamp":"2020-10-05 18:33:14"}
-{"err":{"code":"ER_PARSE_ERROR","errno":1064,"sqlMessage":"You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '=' at line 1","sqlState":"42000","index":0,"sql":"SELECT * FROM branch ="},"level":"info","message":"incoming request verbose","timestamp":"2020-10-05 18:33:14"}
-{"message":"server connected on :3004","level":"info","timestamp":"2020-10-05 18:38:05"}
-{"message":"server connected on :3004","level":"info","timestamp":"2020-10-05 18:38:05"}
-{"method":"GET","url":"/v1/finances","error":null,"level":"info","message":"incoming request verbose","timestamp":"2020-10-05 18:38:08"}
-{"method":"GET","url":"/v1/finances","error":null,"level":"info","message":"incoming request verbose","timestamp":"2020-10-05 18:38:08"}
-{"method":"GET","url":"/v1/branches","error":null,"level":"info","message":"incoming request verbose","timestamp":"2020-10-05 18:38:10"}
-{"method":"GET","url":"/v1/branches","error":null,"level":"info","message":"incoming request verbose","timestamp":"2020-10-05 18:38:10"}
-{"method":"GET","url":"/v1/branches","level":"info","message":"Incoming request","timestamp":"2020-10-05 18:38:10"}
-{"method":"GET","url":"/v1/branches","level":"info","message":"Incoming request","timestamp":"2020-10-05 18:38:10"}
-{"err":null,"level":"info","message":"incoming request verbose","timestamp":"2020-10-05 18:38:10"}
-{"err":null,"level":"info","message":"incoming request verbose","timestamp":"2020-10-05 18:38:10"}
+{"message":"server connected on :3004","level":"info","timestamp":"2020-10-05 18:51:10"}
+{"message":"server connected on :3004","level":"info","timestamp":"2020-10-05 18:51:10"}
+{"method":"GET","url":"/v1/branches","error":null,"level":"info","message":"incoming request REDIS","timestamp":"2020-10-05 18:51:42"}
+{"method":"GET","url":"/v1/branches","error":null,"level":"info","message":"incoming request REDIS","timestamp":"2020-10-05 18:51:42"}
+{"method":"GET","url":"/v1/branches","level":"info","message":"Incoming request","timestamp":"2020-10-05 18:51:42"}
+{"method":"GET","url":"/v1/branches","level":"info","message":"Incoming request","timestamp":"2020-10-05 18:51:42"}
+{"err":null,"level":"info","message":"incoming request CONTROLLERUTIL","timestamp":"2020-10-05 18:51:42"}
+{"err":null,"level":"info","message":"incoming request CONTROLLERUTIL","timestamp":"2020-10-05 18:51:42"}
+{"method":"GET","url":"/v1/finances","error":null,"level":"info","message":"incoming request REDIS","timestamp":"2020-10-05 18:51:44"}
+{"method":"GET","url":"/v1/finances","error":null,"level":"info","message":"incoming request REDIS","timestamp":"2020-10-05 18:51:44"}
+{"method":"GET","url":"/v1/finances","level":"info","message":"Incoming request","timestamp":"2020-10-05 18:51:44"}
+{"method":"GET","url":"/v1/finances","level":"info","message":"Incoming request","timestamp":"2020-10-05 18:51:44"}
+{"err":null,"level":"info","message":"incoming request CONTROLLERUTIL","timestamp":"2020-10-05 18:51:44"}
+{"err":null,"level":"info","message":"incoming request CONTROLLERUTIL","timestamp":"2020-10-05 18:51:44"}
+{"method":"GET","url":"/v1/branches","error":null,"level":"info","message":"incoming request REDIS","timestamp":"2020-10-05 18:52:39"}
+{"method":"GET","url":"/v1/branches","error":null,"level":"info","message":"incoming request REDIS","timestamp":"2020-10-05 18:52:39"}
+{"method":"GET","url":"/v1/employees","error":null,"level":"info","message":"incoming request REDIS","timestamp":"2020-10-05 18:53:22"}
+{"method":"GET","url":"/v1/employees","error":null,"level":"info","message":"incoming request REDIS","timestamp":"2020-10-05 18:53:22"}
+{"method":"GET","url":"/v1/employees","level":"info","message":"Incoming request","timestamp":"2020-10-05 18:53:22"}
+{"method":"GET","url":"/v1/employees","level":"info","message":"Incoming request","timestamp":"2020-10-05 18:53:22"}
+{"err":null,"level":"info","message":"incoming request CONTROLLERUTIL","timestamp":"2020-10-05 18:53:22"}
+{"err":null,"level":"info","message":"incoming request CONTROLLERUTIL","timestamp":"2020-10-05 18:53:22"}
+{"method":"GET","url":"/v1/branches","error":null,"level":"info","message":"incoming request REDIS","timestamp":"2020-10-05 18:53:24"}
+{"method":"GET","url":"/v1/branches","error":null,"level":"info","message":"incoming request REDIS","timestamp":"2020-10-05 18:53:24"}
+{"method":"GET","url":"/v1/finances","error":null,"level":"info","message":"incoming request REDIS","timestamp":"2020-10-05 18:53:37"}
+{"method":"GET","url":"/v1/finances","error":null,"level":"info","message":"incoming request REDIS","timestamp":"2020-10-05 18:53:37"}
+{"method":"GET","url":"/v1/branches","error":null,"level":"info","message":"incoming request REDIS","timestamp":"2020-10-05 18:54:14"}
+{"method":"GET","url":"/v1/branches","error":null,"level":"info","message":"incoming request REDIS","timestamp":"2020-10-05 18:54:14"}
+{"method":"GET","url":"/v1/complaints","error":null,"level":"info","message":"incoming request REDIS","timestamp":"2020-10-05 18:54:35"}
+{"method":"GET","url":"/v1/complaints","error":null,"level":"info","message":"incoming request REDIS","timestamp":"2020-10-05 18:54:35"}
+{"method":"GET","url":"/v1/complaints","level":"info","message":"Incoming request","timestamp":"2020-10-05 18:54:35"}
+{"method":"GET","url":"/v1/complaints","level":"info","message":"Incoming request","timestamp":"2020-10-05 18:54:35"}
+{"err":null,"level":"info","message":"incoming request CONTROLLERUTIL","timestamp":"2020-10-05 18:54:35"}
+{"err":null,"level":"info","message":"incoming request CONTROLLERUTIL","timestamp":"2020-10-05 18:54:35"}
+{"method":"GET","url":"/v1/branches","error":null,"level":"info","message":"incoming request REDIS","timestamp":"2020-10-05 18:54:51"}
+{"method":"GET","url":"/v1/branches","error":null,"level":"info","message":"incoming request REDIS","timestamp":"2020-10-05 18:54:51"}

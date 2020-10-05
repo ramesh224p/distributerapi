@@ -11,7 +11,7 @@ controllerUtills.prototype.getAll=function(commanModel, req, res, callback){
     var username = req.originalUrl.split('/')[2];
     logger.info("Incoming request", { method : req.method, url : req.baseUrl});
     commanModel.getAll( req.params, function(err, data){
-        logger.info("incoming request verbose", {
+        logger.info("incoming request CONTROLLERUTIL", {
               err : err
             });
         if(err){
