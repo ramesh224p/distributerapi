@@ -5,6 +5,9 @@ var redis = require('redis'),
 
 module.exports.redis = function(req, res, next) {
     var username = req.originalUrl.split('/')[2];
+    if ( req.query ) {
+      client.del(username);
+    }
     client.get(username , (error, data) => {
       logger.info("incoming request REDIS", {
         method : req.method,

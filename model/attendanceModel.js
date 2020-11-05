@@ -19,7 +19,7 @@ attendanceModel.prototype.create1 = function (data, callback){
 }
 
 attendanceModel.prototype.update = function (id, item, callback){
-    console.log(item);
+    console.log(item, id)
     this.mysql.query("UPDATE attendance SET? where id="+id, item, function (err, result){
         callback(err, result);
     })

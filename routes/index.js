@@ -5,8 +5,6 @@ router.use('/login', require('./loginRouter'));
 
 router.use('/indents', require('./indentRouter'));
 
-router.use('/forgotpass', require('./forgotpassRouter'));
-
 router.use('/branches', require('./branchRouter'));
 
 router.use('/finances', require('./financeRouter'));

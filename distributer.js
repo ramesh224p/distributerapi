@@ -1,11 +1,11 @@
 var express = require('express'),
   app = express(),
   bodyParser = require('body-parser'),
-  redis = require('redis'),
-  cors = require('cors'),
-  logger = require('./utils/logfile/logger').logger, 
   config = require('./config/config.json'),
+  cors = require('cors'),
   methodOverride = require('method-override'),
+  logger = require('./utils/logfile/logger').logger,
+  redis = require('redis'), 
   client = redis.createClient(config.Redis_PORT);
 
 app.use(function (req, res, next) {
@@ -23,8 +23,6 @@ app.use(methodOverride('X-HTTP-Method'));
 app.use(methodOverride('X-HTTP-Method-Override'));
 app.use(methodOverride('X-Method-Override'));
 app.use(methodOverride('_method'));
-
-
 
 app.listen(config.PORT , function (err) {
   if ( !err )

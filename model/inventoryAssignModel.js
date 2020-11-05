@@ -13,7 +13,7 @@ inventoryAssignModel.prototype.getAll=function(params, callback){
 }
 
 inventoryAssignModel.prototype.getById=function(id, callback){
-    this.mysql.query('SELECT * FROM inventory_assign WHERE id='+id, function(err, result){
+    this.mysql.query('SELECT * FROM inventory_assign WHERE status='+id, function(err, result){
         callback(err, result)
     })
 }

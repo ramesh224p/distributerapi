@@ -10,7 +10,7 @@ function controllerUtills(val) {
 controllerUtills.prototype.getAll=function(commanModel, req, res, callback){
     var username = req.originalUrl.split('/')[2];
     logger.info("Incoming request", { method : req.method, url : req.baseUrl});
-    commanModel.getAll( req.params, function(err, data){
+    commanModel.getAll( req.query, function(err, data){
         logger.info("incoming request CONTROLLERUTIL", {
               err : err
             });

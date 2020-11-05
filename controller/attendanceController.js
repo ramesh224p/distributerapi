@@ -9,7 +9,6 @@ function attendanceController () {
 
 attendanceController.prototype.create = function (req, res, next) {
     if(req.body.email && req.body.password){
-        console.log("ac1");
         am.create(req.body.email, req.body.password, function (err, data) {
             if (err) {
                 res.status(201).send({ status: false, data: [] });
@@ -21,7 +20,6 @@ attendanceController.prototype.create = function (req, res, next) {
         })
     } else {
         am.create1(req.body, function (err, data) {
-            console.log("ac2");
             if (err) {
                 res.status(201).send({ status: false, data: [] });
             } 
@@ -35,8 +33,7 @@ attendanceController.prototype.create = function (req, res, next) {
 }
 
 attendanceController.prototype.update = function (req, res, next) {
-    console.log(req);
-    am.update(req.id, req.body, function (err, data) {
+    am.update(req.params.id, req.body, function (err, data) {
         if (err) {
             res.status(201).send({ status: false, data: [] });
         } else {

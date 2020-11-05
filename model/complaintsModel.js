@@ -24,7 +24,6 @@ complaintsModel.prototype.create=function(data, callback){
 
 complaintsModel.prototype.update=function(id, data, callback){
     this.mysql.query('UPDATE complaints SET? WHERE id='+id, data, function (err, result){
-        console.log(err, result);
         callback(err, result);
     })
 }
