@@ -33,6 +33,8 @@ attendanceController.prototype.create = function (req, res, next) {
 }
 
 attendanceController.prototype.update = function (req, res, next) {
+    console.log("id", req.params.id)
+    console.log("body", req.body.break.split(' ')[1])
     am.update(req.params.id, req.body, function (err, data) {
         if (err) {
             res.status(201).send({ status: false, data: [] });

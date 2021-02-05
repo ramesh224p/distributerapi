@@ -24,7 +24,7 @@ indentModel.prototype.create=function(data, callback){
 
 indentModel.prototype.update=function(id, data, callback){
     this.mysql.query('UPDATE indent SET? WHERE id='+id, data, function(err, result){
-        callback(err, {data, result})
+        callback(err, result)
     })
 }
 

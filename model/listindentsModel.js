@@ -18,7 +18,7 @@ listindentModel.prototype.getById=function(id, callback){
 
 listindentModel.prototype.create=function(data, callback){
     this.mysql.query('INSERT INTO indents SET?',data, function (err, result){
-        callback(err, result)
+        callback(err, {data, result})
     })
 }
 

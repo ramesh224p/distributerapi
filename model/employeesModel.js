@@ -24,7 +24,7 @@ employeesModel.prototype.create=function(data, callback){
 
 employeesModel.prototype.update=function(id, data, callback){
     this.mysql.query('UPDATE employees SET? WHERE id='+id, data, function (err, result){
-        callback(err, {data, result});
+        callback(err, result);
     })
 }
 employeesModel.prototype.remove=function(id, callback){

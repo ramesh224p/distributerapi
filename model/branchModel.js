@@ -27,6 +27,7 @@ branchModel.prototype.update=function(id, data, callback){
         callback(err, result);
     })
 }
+
 branchModel.prototype.remove=function(id, callback){
     this.mysql.query('DELETE FROM branch where id='+id, function (err, result){
         callback(err, result);

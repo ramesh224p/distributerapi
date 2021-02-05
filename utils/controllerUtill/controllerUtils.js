@@ -52,7 +52,15 @@ controllerUtills.prototype.update=function(commanModel, req, res, callback){
             res.status(201).send({status:false,data:[]});
         }else{
             client.del(username);
-            res.status(200).send({status:true,data:data});
+            commanModel.getAll(req.query, function(err, data){
+                if(err){
+                    res.status(201).send({status:false,data:[]});
+                }else {
+                    client.set(username, JSON.stringify(data));
+                    res.status(200).send({status:true,data:data});
+                }
+            })
+            // res.status(200).send({status:true,data:data});
         }
     })
 }

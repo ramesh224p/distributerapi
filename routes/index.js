@@ -21,4 +21,8 @@ router.use('/list-indents', require('./listindentsRouter'));
 
 router.use('/attendance', require('./attendanceRouter'));
 
+router.use('/upload', require('./uploadRouter'));
+
+router.use('/profile', require('./profileRouter'));
+
 module.exports=router;

@@ -36,7 +36,7 @@ inventoryModel.prototype.create=function(data, callback){
 
 inventoryModel.prototype.update=function(id, data, callback){
     this.mysql.query('UPDATE inventory SET? WHERE id='+id, data, function(err, result){
-        callback(err, {data, result});
+        callback(err, result);
     })
 }
 
